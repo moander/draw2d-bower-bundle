@@ -23,23 +23,27 @@ gulp.task('build', ['clean'], function () {
 		.pipe(uglify())
 		.on('error', gutil.log)
 		.pipe(sourcemaps.write('.', { includeContent: true }))
-//		.pipe(gulpif(f=> path.extname(f.path) === '.map', gzip({ gzipOptions: { level: 5 } })))
+	//		.pipe(gulpif(f=> path.extname(f.path) === '.map', gzip({ gzipOptions: { level: 5 } })))
 		.pipe(gulp.dest('dist'));
 
 });
 
-gulp.task('fixbowerjson', function() {
+gulp.task('fixbowerjson', function () {
 	var t = JSON.parse(JSON.stringify(original));
 	t.main = 'dist/draw2d.bundle.js';
-	(t.authors = t.authors||[]).push('moander <moander@outlook.com>');
+	(t.authors = t.authors || []).push('moander <moander@outlook.com>');
 	t.license = 'MIT';
-	t.name = 'draw2d-bundle';	
-	t.ignore = ['**/*','!dist/'];
+	t.name = 'draw2d-bundle';
+	t.ignore = [
+		"*",
+		"!dist/",
+		"!dist/*"
+	];
 	t.moduleType = [
-    		'amd',
-    		'globals',
-    		'node'
-  	];
+		'amd',
+		'globals',
+		'node'
+	];
 	fs.writeFileSync('bower.json', JSON.stringify(t, null, 2));
 
 });

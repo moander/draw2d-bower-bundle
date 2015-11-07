@@ -3,8 +3,9 @@
   "version": "5.6.5",
   "main": "dist/draw2d.bundle.js",
   "ignore": [
-    "**/*",
-    "!dist/"
+    "*",
+    "!dist/",
+    "!dist/*"
   ],
   "dependencies": {
     "jquery": "~1.10.2",
