@@ -1,0 +1,21 @@
+{
+  "name": "draw2d-bundle",
+  "version": "5.6.5",
+  "main": "dist/draw2d.bundle.js",
+  "ignore": [
+    "**/*"
+  ],
+  "dependencies": {
+    "jquery": "~1.10.2",
+    "shifty": "~1.4.2"
+  },
+  "authors": [
+    "moander <moander@outlook.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ]
+}
