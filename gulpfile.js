@@ -34,7 +34,7 @@ gulp.task('fixbowerjson', function() {
 	(t.authors = t.authors||[]).push('moander <moander@outlook.com>');
 	t.license = 'MIT';
 	t.name = 'draw2d-bundle';	
-	t.ignore = ['**/*'];
+	t.ignore = ['**/*','!dist/'];
 	t.moduleType = [
     		'amd',
     		'globals',
